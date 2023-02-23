@@ -22,7 +22,7 @@ def get_personal_data():
                 </p>
                 <p>For any inquiries, feel free to reach out to me via mail!</p>
                 <p>
-                    <a href="https://piperwelch.github.io/assets/pdf/Piper_s_CV_Spring_2023" target="_blank" style="margin-right: 15px"><i class="fa fa-address-card fa-lg"></i> CV</a>
+                    <a href="https://piperwelch.github.io/assets/pdf/Piper_s_CV_Spring_2023.pdf" target="_blank" style="margin-right: 15px"><i class="fa fa-address-card fa-lg"></i> CV</a>
                     <a href="mailto:pwelch1@uvm.edu" style="margin-right: 15px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
                     <a href="https://twitter.com/PiperRWelch" target="_blank" style="margin-right: 15px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
                     <a href="https://scholar.google.com/citations?user=Ifr3LWAAAAAJ&hl=en&oi=ao" target="_blank" style="margin-right: 15px"><i class="fa-solid fa-book"></i> Scholar</a>
