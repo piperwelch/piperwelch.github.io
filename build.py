@@ -196,7 +196,7 @@ def get_index_html():
                 {bio_text}
             </div>
             <div class="col-md-4" style="">
-                <img src="assets/img/profile.jpg" class="img-thumbnail" width="280px" alt="Profile picture">
+                <img src="assets/forLinked_reduced_size.jpg" class="img-thumbnail" width="280px" alt="Profile picture">
             </div>
         </div>
         <div class="row" style="margin-top: 1em;">
