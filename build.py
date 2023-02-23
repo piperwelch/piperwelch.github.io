@@ -7,18 +7,23 @@ def get_personal_data():
     github = "piperwelch"
     linkedin = "michael-niemeyer"
     bio_text = f"""
-                <p>I am Ph.D student at UVM working in evolutionary robotics!</p>
+                <p>I am Ph.D student at the University of Vermont!!</p>
                 <!-- <p>
                     <span style="font-weight: bold;">Research:</span>
                     I am excited about complex problems that can be tackled with learning-based systems. Currently, my research focuses on 3D vision, and I am interested in how machines can infer 3D representations from sparse observations. Further, I am big fan of neural scene representations, \ie, how scenes are best represented in learning-based systems using deep neural networks. 
                 </p> -->
                 <p>
-                    <span style="font-weight: bold;">Bio:</span> 
+                    <span style="font-weight: bold;">Bio:</span>
+                    In 2022, I graduated from Carleton College with a B.A in Computer Science (Biochemistry) and started my Ph.D. at the University of Vermont under <a href="https://jbongard.github.io/">Dr. Josh Bongard</a>.  Currently, my research focuses on evolutionary robotics and swarm robotics. 
+                    During my time as an undergraduate, I worked in <a href="https://anyaevostinar.github.io/">Dr. Anya Vostinar</a>'s Symbulab doing reserch on the evolution of symbioses. 
                     <!-- In 2021 I joined <a href="https://research.google/teams/brain/">Google Brain</a> for an internship and subsequently as a student researcher. -->
                 </p>
                 <p>
                     <span style="font-weight: bold;">Awards:</span>
-
+                    <b>The David Pollatsek '96 Prize in Computer Science</b>, Carleton College, 2022<br>
+                    <b>Sigma Xi</b>, Associate Membership, 2022<br>
+                    <b>CRA Outstanding Undergraduate Researcher</b>, Nominee, Carleton College, 2021<br>
+                    <b>Grace Hopper Scholarship</b>, Carleton College, 2020
                 </p>
                 <p>For any inquiries, feel free to reach out to me via mail!</p>
                 <p>
@@ -96,11 +101,13 @@ def get_paper_entry(entry_key, entry):
     s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
 
     artefacts = {'html': 'Project Page', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
+    artefacts = {}
     i = 0
     for (k, v) in artefacts.items():
         if k in entry.fields.keys():
             if i > 0:
-                s += ' / '
+                pass
+                # s += ' / '
             s += f"""<a href="{entry.fields[k]}" target="_blank">{v}</a>"""
             i += 1
         else:
@@ -111,7 +118,7 @@ def get_paper_entry(entry_key, entry):
     for entr in ['title', 'booktitle', 'year']:
         cite += f"\t{entr} = " + "{" + f"{entry.fields[entr]}" + "}, \n"
     cite += """}</pre></code>"""
-    s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
+    # s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
     s += """ </div> </div> </div>"""
     return s
 
@@ -124,14 +131,14 @@ def get_talk_entry(entry_key, entry):
 
     artefacts = {'slides': 'Slides', 'video': 'Recording'}
     i = 0
-    for (k, v) in artefacts.items():
-        if k in entry.fields.keys():
-            if i > 0:
-                s += ' / '
-            s += f"""<a href="{entry.fields[k]}" target="_blank">{v}</a>"""
-            i += 1
-        else:
-            print(f'[{entry_key}] Warning: Field {k} missing!')
+    # for (k, v) in artefacts.items():
+    #     if k in entry.fields.keys():
+    #         if i > 0:
+    #             s += ' / '
+    #         s += f"""<a href="{entry.fields[k]}" target="_blank">{v}</a>"""
+    #         i += 1
+    #     else:
+    #         print(f'[{entry_key}] Warning: Field {k} missing!')
     s += """ </div> </div> </div>"""
     return s
 
@@ -148,9 +155,12 @@ def get_talks_html():
     parser = bibtex.Parser()
     bib_data = parser.parse_file('talk_list.bib')
     keys = bib_data.entries.keys()
+    print(keys)
     s = ""
     for k in keys:
+        print(k)
         s+= get_talk_entry(k, bib_data.entries[k])
+        
     return s
 
 def get_index_html():
@@ -197,8 +207,8 @@ def get_index_html():
         </div>
         <div class="row" style="margin-top: 3em;">
             <div class="col-sm-12" style="">
-                <h4>Talks</h4>
-                {talks}
+                <!-- <h4>Talks</h4> -->
+                <!-- {talks} -->
             </div>
         </div>
         <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
