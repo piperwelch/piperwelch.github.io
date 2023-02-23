@@ -1,13 +1,13 @@
 from pybtex.database.input import bibtex
 
 def get_personal_data():
-    name = ["Michael", "Niemeyer"]
-    email = "micniemeyer1@gmail.com"
-    twitter = "Mi_Niemeyer"
-    github = "m-niemeyer"
+    name = ["Piper", "Welch"]
+    email = "pwelch1@uvm.edu"
+    twitter = "piperRwelch"
+    github = "piperwelch"
     linkedin = "michael-niemeyer"
     bio_text = f"""
-                <p>I am a research scientist at Google working on 3D computer vision and graphics.</p>
+                <p>I am Ph.D student at UVM working in evolutionary robotics!</p>
                 <!-- <p>
                     <span style="font-weight: bold;">Research:</span>
                     I am excited about complex problems that can be tackled with learning-based systems. Currently, my research focuses on 3D vision, and I am interested in how machines can infer 3D representations from sparse observations. Further, I am big fan of neural scene representations, \ie, how scenes are best represented in learning-based systems using deep neural networks. 
@@ -36,7 +36,7 @@ def get_personal_data():
                     <a href="mailto:micniemeyer1@gmail.com" style="margin-right: 15px"><i class="far fa-envelope-open fa-lg"></i> Mail</a>
                     <a href="https://twitter.com/Mi_Niemeyer" target="_blank" style="margin-right: 15px"><i class="fab fa-twitter fa-lg"></i> Twitter</a>
                     <a href="https://scholar.google.com/citations?user=v1O7i_0AAAAJ&hl=en" target="_blank" style="margin-right: 15px"><i class="fa-solid fa-book"></i> Scholar</a>
-                    <a href="https://github.com/m-niemeyer" target="_blank" style="margin-right: 15px"><i class="fab fa-github fa-lg"></i> Github</a>
+                    <a href="https://github.com/piperwelch" target="_blank" style="margin-right: 15px"><i class="fab fa-github fa-lg"></i> Github</a>
                     <a href="https://www.linkedin.com/in/michael-niemeyer" target="_blank" style="margin-right: 15px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
                 </p>
     """
@@ -50,7 +50,7 @@ def get_personal_data():
                 </p>
             </div>
     """
-    return name, bio_text, footer
+    return name, bio_text, ""
 
 def get_author_dict():
     return {
